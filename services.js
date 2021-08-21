@@ -1,6 +1,4 @@
-
-
-export async function getData(url) {
+export async function getAllPokemonData(url) {
     const response = await fetch(url);
     return response.json();
 }
@@ -121,7 +119,3 @@ export async function filter_by_gen(gen){
     })
     return clean_data;
 }
-
-
-
-export { display_page, remove_pages};
