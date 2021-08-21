@@ -25,22 +25,16 @@ export const display_page = (array_pokemon, array_elemnt) => {
     h1.innerHTML = array_pokemon[single_pokemon].name;
     h.appendChild(h1);
 
-
-
     // Obtener modal
     let modal = document.getElementById("modal")
 
     // Agregar botón de modal
-    let modalBttn = document.createElement("button");
-    modalBttn.innerHTML = "ver mas xd";
-    modalBttn.onclick = function() {
+    h.onclick = function() {
       let modalContent = document.getElementById("modalContent")
       modalContent.innerHTML = `<h1>${array_pokemon[single_pokemon].name}</h1>`
       modal.style.display = "block";
-        
       }
       
-    h.appendChild(modalBttn);
 
     // Agregar elementos al array de HTML
     let div1 = document.getElementById('data-grid').appendChild(h);
