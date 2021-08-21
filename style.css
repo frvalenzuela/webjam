@@ -97,9 +97,25 @@ img {
   text-transform: capitalize;
   background-color: var(--main-white);
   border-radius: 5px;
-  padding: 15px;
+  padding: 10px 0px;
   margin: 0;
-  width: fit-content;
+  width: 255px;
+  text-align: center;
+}
+
+.pkm-main-data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  background-color: var(--main-grey);
+  height: 430px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid var(--main-black);
+}
+.modal-content img {
+  width: 200px;
 }
 
 /* The Modal (background) */
@@ -113,7 +129,6 @@ img {
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0, 0, 0); /* Fallback color */
   background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
 }
 
@@ -131,7 +146,6 @@ img {
   width: 255px;
   height: 20px;
   background-color: var(--main-white);
-  margin: 5px;
   border-radius: 5px;
 }
 
@@ -143,6 +157,19 @@ img {
 .speed-bar {
   border-radius: 5px;
   height: 20px;
+  text-align: center;
+}
+
+.stat-main {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  height: 25px;
+}
+
+.stat-main span {
+  position: relative;
+  top: 20px;
 }
 
 .hp-bar {
