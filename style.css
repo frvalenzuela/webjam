@@ -273,3 +273,16 @@ img {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--main-white);
 }
+
+#gen,
+#type {
+  margin: 20px;
+  width: 150px;
+}
+
+.filters {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: space-around; */
+}
