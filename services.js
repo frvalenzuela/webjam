@@ -9,6 +9,23 @@ export async function getAllPokemonData(url) {
             const element = data.results[i];
             const r = await fetch(element.url);
             const rData = await r.json();
+            if (rData.abilities[0]) {
+                const h1 = await fetch(rData.abilities[0].ability.url)
+                const h1Data = await h1.json();
+                rData.abilities[0] = {...rData.abilities[0], ...h1Data};
+            }
+            if (rData.abilities[1]) {
+                const h1 = await fetch(rData.abilities[1].ability.url)
+                const h1Data = await h1.json();
+                rData.abilities[1] = {...rData.abilities[1], ...h1Data};
+            }
+            if (rData.abilities[2]) {
+                const h1 = await fetch(rData.abilities[2].ability.url)
+                const h1Data = await h1.json();
+                rData.abilities[2] = {...rData.abilities[2], ...h1Data};
+            }
+            console.log(rData.abilities)
+
             pokemonDataResult[element.name] = rData;
         }
         return pokemonDataResult
