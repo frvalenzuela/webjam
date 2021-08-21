@@ -25,48 +25,20 @@ export const display_page = (array_pokemon, array_elemnt) => {
     img.src = array_pokemon[single_pokemon].sprites.front_default;
     h.appendChild(img)
 
+    // Obtener modal
+    let modal = document.getElementById("modal")
+
     // Agregar botón de modal
     let modalBttn = document.createElement("button");
     modalBttn.innerHTML = "ver mas xd";
-    modalBttn.id = `${single_pokemon.name}-modalButton`
     modalBttn.onclick = function() {
-        modal.style.display = "block";
-        // h.style.backgroundColor = "blue";
-        // console.log(`Viendo mas para ${single_pokemon.name}`)
+      let modalContent = document.getElementById("modalContent")
+      modalContent.innerHTML = `<h1>${array_pokemon[single_pokemon].name}</h1>`
+      modal.style.display = "block";
+        
       }
       
     h.appendChild(modalBttn);
-
-    // Agregar modal
-    let modal = document.createElement("div");
-    modal.id = `${single_pokemon.name}-modal`
-    modal.className = "modal"
-
-    let modalContent = document.createElement("span");
-    modalContent.id = `${single_pokemon.name}-modalContent`
-    modalContent.className = "modal-content"
-
-    let closeBttn = document.createElement("span");
-    closeBttn.id = `${single_pokemon.name}-closeBttn`
-    closeBttn.onclick = function() {
-        modal.style.display = "none";
-      }
-      
-    // Introducir elementos
-    h.appendChild(modal)
-    modal.appendChild(closeBttn);
-    modal.appendChild(modalContent);
-
-
-    // Añadir HTML al modal
-    modalContent.innerHTML = `<h1>${array_pokemon[single_pokemon].name}</h1>`;
-
-    // Click fuera del modal, cerrarlo
-    window.onclick = function(event) {
-        if (event.target == modal) {
-          modal.style.display = "none";
-        }
-      }
 
     // Agregar elementos al array de HTML
     let div1 = document.getElementById('data-grid').appendChild(h);

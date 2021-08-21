@@ -12,5 +12,16 @@ display_page(data, html_element);
 
 add_button('.filters');
 
+// Boton para cerrar el modal
+document.getElementById("modalCloseBttn").onclick = function() {
+    document.getElementById("modal").style.display = "none";
+      }
+// Click fuera del modal, cerrarlo
+window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+}
+
 const array_h1 = [];
 
