@@ -30,4 +30,3 @@ window.onclick = function(event) {
 addListBtnMore(data, html_element, page, quantity, url);
 
 const array_h1 = [];
-

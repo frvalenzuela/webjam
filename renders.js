@@ -2,14 +2,19 @@
 export const display_page = (array_pokemon, array_elemnt) => {
   const btn = document.getElementById('btn-more');
 
+
   for (const single_pokemon in array_pokemon) {
     // Agregar elemento
     let card = document.createElement("DIV");
     card.className = 'card';
-
+    card.draggable = true;
+    card.addEventListener("dragstart", handleDragStart);
+    
     // Agregar imagen
     const img = document.createElement("img");
     img.src = array_pokemon[single_pokemon].sprites.front_default;
+    img.draggable = false;
+
     card.appendChild(img)
 
     // Agregar nombre en grande
@@ -50,7 +55,6 @@ export const display_page = (array_pokemon, array_elemnt) => {
     array_elemnt.push(div1);
 
   }
-
 }
 
 export const remove_pages = (array_elemnt, page) => {
@@ -76,4 +80,9 @@ export const add_button = (class_element, class_name) => {
   document.querySelector(class_element).appendChild(text_adding);
   document.querySelector(class_element).appendChild(input_adding);
   document.querySelector(class_element).appendChild(button_adding);
+}
+
+function handleDragStart(e) {
+  console.log("Manejando Dragstart")
+  e.dataTransfer.setData('text/html', this.innerHTML);
 }
