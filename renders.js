@@ -20,15 +20,27 @@ export const display_page = (array_pokemon, array_elemnt) => {
       const modalDefBar = document.getElementsByClassName("def-bar")[0];
       const modalSpDefBar = document.getElementsByClassName("sp-def-bar")[0];
       const modalSpeedBar = document.getElementsByClassName("speed-bar")[0];
+      const modaltType1 = document.getElementById('type1');
+      const modaltType2 = document.getElementById('type2');
+
 
       modalContentTitle.innerHTML = array_pokemon[single_pokemon].name;
+      modaltType1.innerHTML = array_pokemon[single_pokemon].types[0].type.name;
+      if (array_pokemon[single_pokemon].types[1] ) {
+        modaltType2.innerHTML = array_pokemon[single_pokemon].types[1].type.name
+      } else {
+        modaltType2.style.display = 'none';
+      }
+
       modalContentImg.src = array_pokemon[single_pokemon].sprites.front_default;
+
       modalHpBar.style.width = array_pokemon[single_pokemon].stats[0].base_stat;
       modalAtkBar.style.width = array_pokemon[single_pokemon].stats[1].base_stat;
       modalSpAtkBar.style.width = array_pokemon[single_pokemon].stats[2].base_stat;
       modalDefBar.style.width = array_pokemon[single_pokemon].stats[3].base_stat;
       modalSpDefBar.style.width = array_pokemon[single_pokemon].stats[4].base_stat;
       modalSpeedBar.style.width = array_pokemon[single_pokemon].stats[5].base_stat;
+
     };
 
 

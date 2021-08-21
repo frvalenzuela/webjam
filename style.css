@@ -156,7 +156,7 @@ img {
   align-items: center;
   width: 300px;
   background-color: var(--shadow-red);
-  height: 430px;
+  height: 500px;
   padding: 10px;
   border-radius: 5px;
   border: 1px solid var(--main-black);
@@ -170,7 +170,7 @@ img {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
+  padding-top: 60px; /* Location of the box */
   left: 0;
   top: 0;
   width: 100%; /* Full width */
@@ -178,7 +178,17 @@ img {
   overflow: auto; /* Enable scroll if needed */
   background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
 }
-
+#pkm-types {
+  display: flex;
+}
+#type1,
+#type2 {
+  background-color: var(--main-white);
+  margin: 0 10px;
+  padding: 10px;
+  border-radius: 5px;
+  text-transform: uppercase;
+}
 /* Modal Content */
 .modal-content {
   background-color: var(--main-red);
