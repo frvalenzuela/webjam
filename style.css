@@ -11,6 +11,20 @@ body {
   background-color: var(--main-black);
 }
 
+.Main-Title {
+  text-align: center;
+  color: #dff8eb;
+}
+
+.more {
+  width: 100%;
+  margin: 25px;
+  background-color: var(--main-red);
+  border-radius: 5px;
+  color: var(--main-white);
+  font-weight: bold;
+}
+
 .main {
   display: flex;
   align-items: center;
@@ -32,7 +46,32 @@ body {
   margin: 10px 0px;
   background-color: var(--main-red);
   border-radius: 5px;
-  height: 250px;
+  height: 280px;
+}
+
+.filters {
+  height: 240px;
+}
+
+.drag-and-drop {
+  color: transparent;
+  background: linear-gradient(
+    100deg,
+    var(--main-red) 30%,
+    #ffffff 50%,
+    var(--main-red) 70%
+  );
+  animation: loading 2s ease-in-out infinite;
+  background-size: 350%;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .data {
@@ -86,6 +125,7 @@ img {
 .card h1 {
   font-size: 20px;
   text-transform: capitalize;
+  color: var(--main-black);
   background-color: var(--main-white);
   border-radius: 5px;
   padding: 5px;
@@ -96,6 +136,7 @@ img {
   font-size: 20px;
   text-transform: capitalize;
   background-color: var(--main-white);
+  color: var(--main-black);
   border-radius: 5px;
   padding: 10px 0px;
   margin: 0;
@@ -139,7 +180,7 @@ img {
   margin: auto;
   padding: 20px;
   border: 1px solid var(--main-white);
-  width: 80%;
+  width: 60%;
 }
 
 .stat-bar {

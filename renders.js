@@ -35,10 +35,12 @@ export const display_page = (array_pokemon, array_elemnt) => {
       const modalDefBar = document.getElementsByClassName("def-bar")[0];
       const modalSpDefBar = document.getElementsByClassName("sp-def-bar")[0];
       const modalSpeedBar = document.getElementsByClassName("speed-bar")[0];
+      const ability1 = document.getElementById('ability1');
+      const ability2 = document.getElementById('ability2');
+      const abilityHidden = document.getElementById('hiddenAbility');
 
       modalContentTitle.innerHTML = array_pokemon[single_pokemon].name;
       modalContentImg.src = array_pokemon[single_pokemon].sprites.front_default;
-      console.log(array_pokemon[single_pokemon].stats)
       modalHpBar.style.width = array_pokemon[single_pokemon].stats[0].base_stat;
       modalAtkBar.style.width = array_pokemon[single_pokemon].stats[1].base_stat;
       modalSpAtkBar.style.width = array_pokemon[single_pokemon].stats[2].base_stat;
