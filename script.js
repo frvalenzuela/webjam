@@ -10,8 +10,5 @@ display_page(data, html_element);
 
 add_button('.filters');
 
-
 const array_h1 = [];
-
-
 
