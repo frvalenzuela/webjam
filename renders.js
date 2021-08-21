@@ -53,19 +53,22 @@ export const display_page = (array_pokemon, array_elemnt) => {
 
 }
 
-export const remove_pages = (array_elemnt) => {
+export const remove_pages = (array_elemnt, page) => {
+  if (page[0] <= 0) {
+    page[0] -= 1;
+  }
   array_elemnt.forEach(single_pokemon => {
       single_pokemon.remove();
   })
 }
 
-export const add_button = (class_element) => {
+export const add_button = (class_element, class_name) => {
   let text_adding = document.createElement('span');
   let input_adding = document.createElement('input');
   let button_adding = document.createElement('button');
   text_adding.setAttribute('class', 'text-add');
   input_adding.setAttribute('class', 'input-add');
-  button_adding.setAttribute('class', 'button-add');
+  button_adding.setAttribute('class', class_name);
 
   text_adding.innerText = 'newValue';
   button_adding.innerText = '+';
