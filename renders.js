@@ -22,16 +22,25 @@ export const display_page = (array_pokemon, array_elemnt) => {
 
     // Agregar botón de modal
     card.onclick = function() {
-      const modalContent = document.getElementById("modalContent")
-      // modalContent.innerHTML = `<h1 class='pokemon-title'>${array_pokemon[single_pokemon].name}</h1>`
-      const div1 = document.createElement('DIV');
-      const div2 = document.createElement('DIV');
-      modalContent.appendChild(div1);
-      modalContent.appendChild(div2);
+      const modalContentTitle = document.getElementById("modalTitle");
+      const modalContentImg = document.getElementById("modalImg");
+      const modalHpBar = document.getElementsByClassName("hp-bar")[0];
+      const modalAtkBar = document.getElementsByClassName("atk-bar")[0];
+      const modalSpAtkBar = document.getElementsByClassName("sp-atk-bar")[0];
+      const modalDefBar = document.getElementsByClassName("def-bar")[0];
+      const modalSpDefBar = document.getElementsByClassName("sp-def-bar")[0];
+      const modalSpeedBar = document.getElementsByClassName("speed-bar")[0];
 
-      const h1ModalTitle = document.createElement('H1');
-      h1ModalTitle.innerHTML = array_pokemon[single_pokemon].name;
-      div1.appendChild(h1ModalTitle);
+      modalContentTitle.innerHTML = array_pokemon[single_pokemon].name;
+      modalContentImg.src = array_pokemon[single_pokemon].sprites.front_default;
+      console.log(array_pokemon[single_pokemon].stats)
+      modalHpBar.style.width = array_pokemon[single_pokemon].stats[0].base_stat;
+      modalAtkBar.style.width = array_pokemon[single_pokemon].stats[1].base_stat;
+      modalSpAtkBar.style.width = array_pokemon[single_pokemon].stats[2].base_stat;
+      modalDefBar.style.width = array_pokemon[single_pokemon].stats[3].base_stat;
+      modalSpDefBar.style.width = array_pokemon[single_pokemon].stats[4].base_stat;
+      modalSpeedBar.style.width = array_pokemon[single_pokemon].stats[5].base_stat;
+
 
       modal.style.display = "block";
       }

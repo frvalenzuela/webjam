@@ -127,6 +127,48 @@ img {
   width: 80%;
 }
 
+.stat-bar {
+  width: 255px;
+  height: 20px;
+  background-color: var(--main-white);
+  margin: 5px;
+  border-radius: 5px;
+}
+
+.hp-bar,
+.atk-bar,
+.sp-atk-bar,
+.def-bar,
+.sp-def-bar,
+.speed-bar {
+  border-radius: 5px;
+  height: 20px;
+}
+
+.hp-bar {
+  background-color: darkred;
+}
+
+.atk-bar {
+  background-color: orange;
+}
+
+.sp-atk-bar {
+  background-color: yellow;
+}
+
+.def-bar {
+  background-color: blue;
+}
+
+.sp-def-bar {
+  background-color: green;
+}
+
+.speed-bar {
+  background-color: cyan;
+}
+
 /* width */
 ::-webkit-scrollbar {
   width: 5px;
