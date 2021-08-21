@@ -15,15 +15,17 @@ export const display_page = (array_pokemon, array_elemnt) => {
     let h = document.createElement("DIV");
     h.className = 'card';
 
+    // Agregar imagen
+    const img = document.createElement("img");
+    img.src = array_pokemon[single_pokemon].sprites.front_default;
+    h.appendChild(img)
+
     // Agregar nombre en grande
     let h1 = document.createElement('H1');
     h1.innerHTML = array_pokemon[single_pokemon].name;
     h.appendChild(h1);
 
-    // Agregar imagen
-    const img = document.createElement("img");
-    img.src = array_pokemon[single_pokemon].sprites.front_default;
-    h.appendChild(img)
+
 
     // Agregar botón de modal
     let modalBttn = document.createElement("button");
