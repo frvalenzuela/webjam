@@ -1,4 +1,6 @@
-import { getData, display_page, remove_pages, filter_by_type, filter_by_gen, add_button } from "./services.js";
+import { display_page, remove_pages, add_button } from "./renders.js";
+import { getData,  filter_by_type, filter_by_gen } from "./services.js";
+
 
 let data = await getData('https://pokeapi.co/api/v2/pokemon?limit=1000');
 const html_element = [];
