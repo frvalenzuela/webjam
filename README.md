@@ -8,6 +8,7 @@
 <a href="https://github.com/">Technologies</a> ·
 <a href="https://github.com/">Comments</a>
 
+
   <img src="https://img.shields.io/static/v1?label=CCC&message=2021&color=yellow" />
   <img src="https://img.shields.io/static/v1?label=WebJam&message=21-I&color=blue" />
   <img src="https://img.shields.io/static/v1?label=Theme&message=Information&color=green" />
@@ -28,10 +29,10 @@
 ## 🖼️ Images
 
 <div align="center">
-  <img src="https://via.placeholder.com/150" />
-  <img src="https://via.placeholder.com/150" />
-  <img src="https://via.placeholder.com/150" />
-  <img src="https://via.placeholder.com/150" />
+  <img src="https://user-images.githubusercontent.com/20147482/130336697-92c9739b-c8a7-4d59-a8fe-cafae385dfa7.png" />
+  <img src="https://user-images.githubusercontent.com/20147482/130336677-e6192fa3-8418-4fae-809a-85919cb40394.png" />
+  <img src="https://user-images.githubusercontent.com/20147482/130336697-92c9739b-c8a7-4d59-a8fe-cafae385dfa7.png" />
+  <img src="https://user-images.githubusercontent.com/20147482/130336677-e6192fa3-8418-4fae-809a-85919cb40394.png" />
 </div>
 
 ## 👪 Team
@@ -50,3 +51,5 @@
   - CSS
 
 ## 💬 Comments
+
+We have a lot of fun!
