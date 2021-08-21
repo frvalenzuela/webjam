@@ -23,8 +23,8 @@
 
 ## 🎒 Submission
 
-- [ ] [https://frvalenzuela.github.io/webjam/](https://github.com/)
-- [ ] [https://github.com/frvalenzuela/webjam](https://github.com/)
+- [ ] [https://frvalenzuela.github.io/webjam/](https://frvalenzuela.github.io/webjam/)
+- [ ] [https://github.com/frvalenzuela/webjam](https://github.com/frvalenzuela/webjam])
 
 ## 🖼️ Images
 
