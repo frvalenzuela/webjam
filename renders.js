@@ -10,8 +10,25 @@ export const display_page = (array_pokemon, array_elemnt) => {
     card.draggable = true;
     card.id = single_pokemon;
     card.ondragstart= function(event) {
-      console.log('drag', event.target.id)
       event.dataTransfer.setData("Text", event.target.id);
+
+      const modalContentTitle = document.getElementById("modalTitle");
+      const modalContentImg = document.getElementById("modalImg");
+      const modalHpBar = document.getElementsByClassName("hp-bar")[0];
+      const modalAtkBar = document.getElementsByClassName("atk-bar")[0];
+      const modalSpAtkBar = document.getElementsByClassName("sp-atk-bar")[0];
+      const modalDefBar = document.getElementsByClassName("def-bar")[0];
+      const modalSpDefBar = document.getElementsByClassName("sp-def-bar")[0];
+      const modalSpeedBar = document.getElementsByClassName("speed-bar")[0];
+
+      modalContentTitle.innerHTML = array_pokemon[single_pokemon].name;
+      modalContentImg.src = array_pokemon[single_pokemon].sprites.front_default;
+      modalHpBar.style.width = array_pokemon[single_pokemon].stats[0].base_stat;
+      modalAtkBar.style.width = array_pokemon[single_pokemon].stats[1].base_stat;
+      modalSpAtkBar.style.width = array_pokemon[single_pokemon].stats[2].base_stat;
+      modalDefBar.style.width = array_pokemon[single_pokemon].stats[3].base_stat;
+      modalSpDefBar.style.width = array_pokemon[single_pokemon].stats[4].base_stat;
+      modalSpeedBar.style.width = array_pokemon[single_pokemon].stats[5].base_stat;
     };
 
 
@@ -30,31 +47,27 @@ export const display_page = (array_pokemon, array_elemnt) => {
     let modal = document.getElementById("modal")
 
     // Agregar botón de modal
-    card.onclick = function() {
-      const modalContentTitle = document.getElementById("modalTitle");
-      const modalContentImg = document.getElementById("modalImg");
-      const modalHpBar = document.getElementsByClassName("hp-bar")[0];
-      const modalAtkBar = document.getElementsByClassName("atk-bar")[0];
-      const modalSpAtkBar = document.getElementsByClassName("sp-atk-bar")[0];
-      const modalDefBar = document.getElementsByClassName("def-bar")[0];
-      const modalSpDefBar = document.getElementsByClassName("sp-def-bar")[0];
-      const modalSpeedBar = document.getElementsByClassName("speed-bar")[0];
-      const ability1 = document.getElementById('ability1');
-      const ability2 = document.getElementById('ability2');
-      const abilityHidden = document.getElementById('hiddenAbility');
+    // card.onclick = function() {
+    //   const modalContentTitle = document.getElementById("modalTitle");
+    //   const modalContentImg = document.getElementById("modalImg");
+    //   const modalHpBar = document.getElementsByClassName("hp-bar")[0];
+    //   const modalAtkBar = document.getElementsByClassName("atk-bar")[0];
+    //   const modalSpAtkBar = document.getElementsByClassName("sp-atk-bar")[0];
+    //   const modalDefBar = document.getElementsByClassName("def-bar")[0];
+    //   const modalSpDefBar = document.getElementsByClassName("sp-def-bar")[0];
+    //   const modalSpeedBar = document.getElementsByClassName("speed-bar")[0];
 
-      modalContentTitle.innerHTML = array_pokemon[single_pokemon].name;
-      modalContentImg.src = array_pokemon[single_pokemon].sprites.front_default;
-      modalHpBar.style.width = array_pokemon[single_pokemon].stats[0].base_stat;
-      modalAtkBar.style.width = array_pokemon[single_pokemon].stats[1].base_stat;
-      modalSpAtkBar.style.width = array_pokemon[single_pokemon].stats[2].base_stat;
-      modalDefBar.style.width = array_pokemon[single_pokemon].stats[3].base_stat;
-      modalSpDefBar.style.width = array_pokemon[single_pokemon].stats[4].base_stat;
-      modalSpeedBar.style.width = array_pokemon[single_pokemon].stats[5].base_stat;
+    //   modalContentTitle.innerHTML = array_pokemon[single_pokemon].name;
+    //   modalContentImg.src = array_pokemon[single_pokemon].sprites.front_default;
+    //   modalHpBar.style.width = array_pokemon[single_pokemon].stats[0].base_stat;
+    //   modalAtkBar.style.width = array_pokemon[single_pokemon].stats[1].base_stat;
+    //   modalSpAtkBar.style.width = array_pokemon[single_pokemon].stats[2].base_stat;
+    //   modalDefBar.style.width = array_pokemon[single_pokemon].stats[3].base_stat;
+    //   modalSpDefBar.style.width = array_pokemon[single_pokemon].stats[4].base_stat;
+    //   modalSpeedBar.style.width = array_pokemon[single_pokemon].stats[5].base_stat;
 
-
-      modal.style.display = "block";
-      }
+    //   modal.style.display = "block";
+    //   }
       
     // Agregar elementos al array de HTML
     let div1 = document.getElementById('data-grid').insertBefore(card, btn);
