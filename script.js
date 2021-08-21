@@ -12,8 +12,11 @@ const all_pokemon = data.results;
 console.log(all_pokemon[0]);
 
 all_pokemon.forEach(single_pokemon => {
-    let h = document.createElement("H1");
+    let h = document.createElement("DIV");
+    h.className = 'card';
+    let h1 = document.createElement('H1');
     let t = document.createTextNode(single_pokemon.name);
-    h.appendChild(t);
-    document.body.appendChild(h);
+    h1.appendChild(t);
+    h.appendChild(h1);
+    document.getElementById('data-grid').appendChild(h);
 })
