@@ -9,7 +9,7 @@ export const display_page = (array_pokemon, array_elemnt) => {
     card.className = 'card';
     card.draggable = true;
     card.id = single_pokemon;
-    card.ondragstart=function(event) {
+    card.ondragstart= function(event) {
       console.log('drag', event.target.id)
       event.dataTransfer.setData("Text", event.target.id);
     };
@@ -86,8 +86,4 @@ export const add_button = (class_element, class_name) => {
   document.querySelector(class_element).appendChild(text_adding);
   document.querySelector(class_element).appendChild(input_adding);
   document.querySelector(class_element).appendChild(button_adding);
-}
-
-function drag(ev) {
-  ev.dataTransfer.setData("text", ev.target.id);
 }

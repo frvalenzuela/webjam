@@ -3,13 +3,8 @@
     <meta charset="UTF-8" />
     <script type="module" src="script.js"></script>
     <script>
-        function drag(ev) {
-            ev.dataTransfer.setData("text", ev.target.id);
-        }
-
         function drop(ev) {
             const dragZone =  document.getElementById('drag-and-drop');
-            console.log(dragZone.childNodes, 'start', ev.dataTransfer.getData("text"))
             const btn = document.getElementById('btn-more');
             const grid = document.getElementById('data-grid');
             if (dragZone.childNodes.length >= 1) {
@@ -20,7 +15,6 @@
                     }
                 });
             }
-            console.log(dragZone.childNodes, 'end')
             ev.preventDefault();
             var data = ev.dataTransfer.getData("text");
             ev.target.appendChild(document.getElementById(data));
@@ -43,7 +37,35 @@
             <div class='drag-and-drop' id='drag-and-drop' ondrop="drop(event)">
             </div>
             <div class='filters'>
-                Filters Yey
+                <select name="types" id="type">
+                    <option value="normal">Normal</option>
+                    <option value="fire">Fire</option>
+                    <option value="water">Water</option>
+                    <option value="grass">Grass</option>
+                    <option value="flying">Flying</option>
+                    <option value="fighting">Fighting</option>
+                    <option value="poison">Poison</option>
+                    <option value="electric">Electric</option>
+                    <option value="ground">Ground</option>
+                    <option value="rock">Rock</option>
+                    <option value="psychic">Psychic</option>
+                    <option value="ice">Ice</option>
+                    <option value="bug">Bug</option>
+                    <option value="steel">Steel</option>
+                    <option value="dragon">Dragon</option>
+                    <option value="dark">Dark</option>
+                    <option value="fairy">Fairy</option>
+                </select>
+                <select name="gens" id="gen">
+                    <option value="1">Primera</option>
+                    <option value="2">Segunda</option>
+                    <option value="3">Tercera</option>
+                    <option value="4">Cuarta</option>
+                    <option value="5">Quinta</option>
+                    <option value="6">Sexta</option>
+                    <option value="7">Septima</option>
+                    <option value="8">Octaba</option>
+                </select>
             </div>
         </div>
        

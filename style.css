@@ -53,7 +53,13 @@ body {
   height: 240px;
 }
 
+.drag-and-drop .card {
+  background-color: var(--shadow-red);
+}
+
 .drag-and-drop {
+  display: flex;
+  justify-content: center;
   color: transparent;
   background: linear-gradient(
     100deg,
@@ -149,7 +155,7 @@ img {
   flex-direction: column;
   align-items: center;
   width: 300px;
-  background-color: var(--main-grey);
+  background-color: var(--shadow-red);
   height: 430px;
   padding: 10px;
   border-radius: 5px;
@@ -180,7 +186,7 @@ img {
   margin: auto;
   padding: 20px;
   border: 1px solid var(--main-white);
-  width: 60%;
+  width: 320px;
 }
 
 .stat-bar {
