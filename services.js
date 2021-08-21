@@ -1,3 +1,5 @@
+import { display_page } from "./renders.js";
+
 export async function getAllPokemonData(url) {
     const response = await fetch(url);
     const data = await response.json();
@@ -5,10 +7,8 @@ export async function getAllPokemonData(url) {
         const pokemonDataResult = {};
         for (let i = 0; i < data.results.length; i++) {
             const element = data.results[i];
-            console.log(element)
             const r = await fetch(element.url);
             const rData = await r.json();
-            console.log(rData)
             pokemonDataResult[element.name] = rData;
         }
         return pokemonDataResult
@@ -49,4 +49,21 @@ export async function filter_by_gen(gen){
         })
     })
     return clean_data;
+}
+
+export const add_pokemon_data = async(data, html_element, page, quantity) => {
+    let start = page*quantity;
+    let url = `https://pokeapi.co/api/v2/pokemon?offset=${start}&limit=${quantity}`;
+    console.log(url);
+    let new_pokemon = await getAllPokemonData(url);
+    data = {...data, ...new_pokemon};
+    await display_page(new_pokemon, html_element);
+}
+
+export const addListBtnMore = async(data, html_element, page, quantity) => {
+    const btn = document.querySelector('.more');
+    btn.addEventListener("click", async(e) => {
+        page += 1;
+        const new_pokemons = await add_pokemon_data(data, html_element, page, quantity);
+    });
 }
