@@ -50,6 +50,7 @@ body {
 
 .card:hover {
   box-shadow: 0px 1px 3px var(--main-grey), 0px 1px 5px var(--main-white);
+  cursor: pointer;
 }
 
 .card h1 {
