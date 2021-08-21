@@ -2,6 +2,7 @@
 export const display_page = (array_pokemon, array_elemnt) => {
   const btn = document.getElementById('btn-more');
 
+
   for (const single_pokemon in array_pokemon) {
     // Agregar elemento
     let card = document.createElement("DIV");
@@ -60,7 +61,6 @@ export const display_page = (array_pokemon, array_elemnt) => {
     array_elemnt.push(div1);
 
   }
-
 }
 
 export const remove_pages = (array_elemnt, page) => {
