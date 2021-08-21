@@ -6,10 +6,18 @@ export const display_page = (array_pokemon, array_elemnt) => {
     // Agregar elemento
     let card = document.createElement("DIV");
     card.className = 'card';
+    card.draggable = true;
+    card.id = single_pokemon;
+    card.ondragstart=function(event) {
+      console.log('drag', event.target.id)
+      event.dataTransfer.setData("Text", event.target.id);
+    };
+
 
     // Agregar imagen
     const img = document.createElement("img");
     img.src = array_pokemon[single_pokemon].sprites.front_default;
+    img.draggable = false;
     card.appendChild(img)
 
     // Agregar nombre en grande
@@ -78,4 +86,8 @@ export const add_button = (class_element, class_name) => {
   document.querySelector(class_element).appendChild(text_adding);
   document.querySelector(class_element).appendChild(input_adding);
   document.querySelector(class_element).appendChild(button_adding);
+}
+
+function drag(ev) {
+  ev.dataTransfer.setData("text", ev.target.id);
 }
