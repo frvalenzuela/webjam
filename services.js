@@ -142,19 +142,42 @@ export const apply_filters = async(data, html_element, url, page, filter_string,
     display_page(data, html_element);
 }
 
+export const check_correct_input = (filter_type, user_input) => {
+    if (filter_type === 'type') {
+        const array_type = ['normal', ' fire', ' water', ' grass', ' flying',
+        ' fighting', ' poison', ' electric', ' ground', ' rock', ' psychic',
+        ' ice', ' bug', ' ghost', ' steel', ' dragon', ' dark', 'fairy'];
+        let user_input_lower = user_input.toLowerCase();
+        return array_type.includes(user_input_lower);
+    } else if (filter_type === 'generation'){
+        const array_generation = ['1', '2', '3', '4', '5', '6', '7', '8'];
+        let user_input_lower = user_input.toLowerCase();
+        return array_generation.includes(user_input_lower);
+    }
+}
+
 export const addListFilt = async(data, html_element, page, url, btn_class_element, filter_type) => {
     const btn = document.querySelector(btn_class_element);
     btn.addEventListener("click", async(e) => {
-        const btn_more = document.querySelector('.more');
-        const div_parent  = btn_more.parentNode;
-        let h1 = document.createElement('H1');
-        h1.innerHTML = 'LOADING...';
-        div_parent.appendChild(h1);
-        btn_more.style.visibility='hidden';
+
         let input_box = e.target.previousSibling;
-        await apply_filters(data, html_element, url, page, input_box.value, filter_type);
-        input_box.value = '';
-        h1.style.display='none';
+        let verification = check_correct_input(input_box.value);
+        if (verification) {
+            const btn_more = document.querySelector('.more');
+            const div_parent  = btn_more.parentNode;
+            let h1 = document.createElement('H1');
+            h1.innerHTML = 'LOADING...';
+            div_parent.appendChild(h1);
+            btn_more.style.visibility='hidden';
+            await apply_filters(data, html_element, url, page, input_box.value, filter_type);
+            input_box.value = '';
+            h1.style.display='none';
+        } else{
+            input_box.value = '';
+            let h1 = document.createElement('span');
+            h1.innerHTML = 'BAD INPUT   ';
+            input_box.parentNode.appendChild(h1);
+        }
 
     });
 }
@@ -166,3 +189,4 @@ export const addListByType = async(data, html_element, page, url, btn_class_elem
 export const addListByGen = async(data, html_element, page, url, btn_class_element) => {
     await addListFilt(data, html_element, page, url, btn_class_element, 'generation');
 }
+
