@@ -1,45 +1,47 @@
 
 export const display_page = (array_pokemon, array_elemnt) => {
-  for (const single_pokemon in array_pokemon) {
-    /* const h = document.createElement("DIV");
-    h.className = 'card';
-    
-    const h1 = document.createElement('H1');
-    h1.innerHTML = single_pokemon;
-    h.appendChild(h1);
+  const btn = document.getElementById('btn-more');
 
-    const div1 = document.getElementById('data-grid').appendChild(h);
-    array_elemnt.push(div1);  */
-    
+  for (const single_pokemon in array_pokemon) {
     // Agregar elemento
-    let h = document.createElement("DIV");
-    h.className = 'card';
+    let card = document.createElement("DIV");
+    card.className = 'card';
 
     // Agregar imagen
     const img = document.createElement("img");
     img.src = array_pokemon[single_pokemon].sprites.front_default;
-    h.appendChild(img)
+    card.appendChild(img)
 
     // Agregar nombre en grande
     let h1 = document.createElement('H1');
     h1.innerHTML = array_pokemon[single_pokemon].name;
-    h.appendChild(h1);
+    card.appendChild(h1);
 
     // Obtener modal
     let modal = document.getElementById("modal")
 
     // Agregar botón de modal
-    h.onclick = function() {
-      let modalContent = document.getElementById("modalContent")
-      modalContent.innerHTML = `<h1>${array_pokemon[single_pokemon].name}</h1>`
+    card.onclick = function() {
+      const modalContent = document.getElementById("modalContent")
+      // modalContent.innerHTML = `<h1 class='pokemon-title'>${array_pokemon[single_pokemon].name}</h1>`
+      const div1 = document.createElement('DIV');
+      const div2 = document.createElement('DIV');
+      modalContent.appendChild(div1);
+      modalContent.appendChild(div2);
+
+      const h1ModalTitle = document.createElement('H1');
+      h1ModalTitle.innerHTML = array_pokemon[single_pokemon].name;
+      div1.appendChild(h1ModalTitle);
+
       modal.style.display = "block";
       }
       
-
     // Agregar elementos al array de HTML
-    let div1 = document.getElementById('data-grid').appendChild(h);
+    let div1 = document.getElementById('data-grid').insertBefore(card, btn);
     array_elemnt.push(div1);
+
   }
+
 }
 
 export const remove_pages = (array_elemnt) => {
