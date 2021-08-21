@@ -42,7 +42,7 @@ const filter_by_gen = (array_html_elements, number_gen) => {
     } else if (number_gen === 7) {
         hide_by_range(722,809);
     } else if (number_gen === 8) {
-        hide_by_range(722,809);
+        hide_by_range(810,900);
     }
 }
 

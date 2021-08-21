@@ -27,6 +27,22 @@ const remove_pages = (array_elemnt) => {
     })
 }
 
+export const add_button = (class_element) => {
+    let text_adding = document.createElement('span');
+    let input_adding = document.createElement('input');
+    let button_adding = document.createElement('button');
+    text_adding.setAttribute('class', 'text-add');
+    input_adding.setAttribute('class', 'input-add');
+    button_adding.setAttribute('class', 'button-add');
+
+    text_adding.innerText = 'newValue';
+    button_adding.innerText = '+';
+
+    document.querySelector(class_element).appendChild(text_adding);
+    document.querySelector(class_element).appendChild(input_adding);
+    document.querySelector(class_element).appendChild(button_adding);
+}
+
 // Filtro por Tipo
 export async function filter_by_type(type){
 
