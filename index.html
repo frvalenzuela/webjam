@@ -10,6 +10,7 @@
             const dragZone =  document.getElementById('drag-and-drop');
             const btn = document.getElementById('btn-more');
             const grid = document.getElementById('data-grid');
+            const modal = document.getElementById("modal")
             if (dragZone.childNodes.length > 1) {
                 dragZone.childNodes.forEach(element => {
                     if (element.id) {
@@ -18,6 +19,7 @@
                 });
             }
             dragZone.appendChild(targetCard);
+            modal.style.display = "block";
         }
 
 
@@ -88,31 +90,31 @@
                             </div>
                         </div>
                         <div class="stat-main">
-                            <span>Ataque</span>
+                            <span>Attack</span>
                             <div class="stat-bar">
                                 <div class="atk-bar"></div>
                             </div>
                         </div>
                         <div class="stat-main">
-                            <span>Ataque Especial</span>
+                            <span>Special Attack</span>
                             <div class="stat-bar">
                                 <div class="sp-atk-bar"></div>
                             </div>
                         </div>
                         <div class="stat-main">
-                            <span>Defensa</span>
+                            <span>Defense</span>
                             <div class="stat-bar">
                                 <div class="def-bar"></div>
                             </div>
                         </div>
                         <div class="stat-main">
-                            <span>Defensa Espacial</span>
+                            <span>Special Defense</span>
                             <div class="stat-bar">
                                 <div class="sp-def-bar"></div>
                             </div>
                         </div>
                         <div class="stat-main">
-                            <span>Velocidad</span>
+                            <span>Speed</span>
                             <div class="stat-bar">
                                 <div class="speed-bar"></div>
                             </div>
