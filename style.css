@@ -18,14 +18,16 @@ body {
 }
 
 .filters {
-  min-width: 20%;
+  width: 20%;
+  min-width: 200px;
+  margin-right: 10px;
   background-color: var(--main-red);
   border-radius: 5px;
   max-height: calc(100vh - 100px);
 }
 
 .data {
-  max-width: 75%;
+  width: 75%;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
