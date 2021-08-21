@@ -9,7 +9,6 @@ data = await filter_by_type('fire');
 display_page(data, html_element);
 
 
-
 const array_h1 = [];
 
 

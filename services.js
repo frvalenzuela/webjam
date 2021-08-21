@@ -8,11 +8,13 @@ export async function getData(url) {
 
 const display_page = (array_pokemon, array_elemnt) => {
     array_pokemon.forEach(single_pokemon => {
+
+        // console.log(single_pokemon)
+
         let h = document.createElement("DIV");
         h.className = 'card';
         let h1 = document.createElement('H1');
-        let t = document.createTextNode(single_pokemon.name);
-        h1.appendChild(t);
+        h1.innerHTML = single_pokemon.name;
         h.appendChild(h1);
         let div1 = document.getElementById('data-grid').appendChild(h);
         array_elemnt.push(div1);
@@ -30,7 +32,16 @@ export async function filter_by_type(type){
 
     let data = await getData(`https://pokeapi.co/api/v2/type/${type}`);
     
-    return data.pokemon
+    let clean_data = [];
+
+    data.pokemon.forEach( single_pokemon => {
+        clean_data.push({
+            name: single_pokemon.pokemon.name,
+            url: single_pokemon.pokemon.url
+        })
+    })
+
+    return clean_data;
 }
 
 // Filtro por Generacion
@@ -38,7 +49,15 @@ export async function filter_by_gen(gen){
 
     let data = await getData(`https://pokeapi.co/api/v2/generation/1/${gen}/`);
     
-    return data.pokemon
+    let clean_data = [];
+
+    data.pokemon.forEach( single_pokemon => {
+        clean_data.push({
+            name: single_pokemon.pokemon.name,
+            url: single_pokemon.pokemon.url
+        })
+    })
+    return clean_data;
 }
 
 
