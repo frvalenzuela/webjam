@@ -1,14 +1,19 @@
 
 export const display_page = (array_pokemon, array_elemnt) => {
-  array_pokemon.forEach(single_pokemon => {
-      let h = document.createElement("DIV");
-      h.className = 'card';
-      let h1 = document.createElement('H1');
-      h1.innerHTML = single_pokemon.name;
-      h.appendChild(h1);
-      let div1 = document.getElementById('data-grid').appendChild(h);
-      array_elemnt.push(div1);
-  })
+  for (const single_pokemon in array_pokemon) {
+    console.log(array_pokemon[single_pokemon].sprites.front_default)
+    const h = document.createElement("DIV");
+    h.className = 'card';
+    const img = document.createElement("img");
+    img.src = array_pokemon[single_pokemon].sprites.front_default;
+    h.appendChild(img)
+    const h1 = document.createElement('H1');
+    h1.innerHTML = single_pokemon;
+    h.appendChild(h1);
+
+    const div1 = document.getElementById('data-grid').appendChild(h);
+    array_elemnt.push(div1); 
+  }
 }
 
 export const remove_pages = (array_elemnt) => {
