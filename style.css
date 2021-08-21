@@ -11,6 +11,11 @@ body {
   background-color: var(--main-black);
 }
 
+.Main-Title {
+  text-align: center;
+  color: #dff8eb;
+}
+
 .more {
   width: 100%;
   margin: 25px;
@@ -95,6 +100,7 @@ img {
 .card h1 {
   font-size: 20px;
   text-transform: capitalize;
+  color: var(--main-black);
   background-color: var(--main-white);
   border-radius: 5px;
   padding: 5px;
@@ -105,6 +111,7 @@ img {
   font-size: 20px;
   text-transform: capitalize;
   background-color: var(--main-white);
+  color: var(--main-black);
   border-radius: 5px;
   padding: 10px 0px;
   margin: 0;
