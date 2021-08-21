@@ -160,17 +160,22 @@ export const check_correct_input = (filter_type, user_input) => {
 export const addListFilt = async(data, html_element, page, url, btn_class_element, filter_type) => {
     const btn = document.getElementById(btn_class_element);
     btn.addEventListener("change", async(e) => {
+        let selector_type = document.getElementById("type");
+        let selector_gen = document.getElementById("gen");
+        if (selector_type.selectedIndex === 0 && selector_gen.selectedIndex === 0) {
+            const pass = 'pass';
+        } else {
+            let input_box = btn.value;
+            const btn_more = document.querySelector('.more');
+            const div_parent  = btn_more.parentNode;
+            let h1 = document.createElement('H1');
+            h1.innerHTML = 'LOADING...';
+            div_parent.appendChild(h1);
+            btn_more.style.visibility='hidden';
+            await apply_filters(data, html_element, url, page, input_box, filter_type);
+            h1.style.display='none';
 
-        let input_box = btn.value;
-        const btn_more = document.querySelector('.more');
-        const div_parent  = btn_more.parentNode;
-        let h1 = document.createElement('H1');
-        h1.innerHTML = 'LOADING...';
-        div_parent.appendChild(h1);
-        btn_more.style.visibility='hidden';
-        await apply_filters(data, html_element, url, page, input_box, filter_type);
-        h1.style.display='none';
-
+        }
     });
 }
 
