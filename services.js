@@ -143,10 +143,11 @@ export const apply_filters = async(data, html_element, url, page, filter_string,
 }
 
 export const check_correct_input = (filter_type, user_input) => {
+    console.log(filter_type, user_input)
     if (filter_type === 'type') {
-        const array_type = ['normal', ' fire', ' water', ' grass', ' flying',
-        ' fighting', ' poison', ' electric', ' ground', ' rock', ' psychic',
-        ' ice', ' bug', ' ghost', ' steel', ' dragon', ' dark', 'fairy'];
+        const array_type = ['normal', 'fire', 'water', 'grass', 'flying',
+        'fighting', 'poison', 'electric', 'ground', 'rock', 'psychic',
+        'ice', 'bug', 'ghost', 'steel', 'dragon', 'dark', 'fairy'];
         let user_input_lower = user_input.toLowerCase();
         return array_type.includes(user_input_lower);
     } else if (filter_type === 'generation'){
@@ -161,7 +162,7 @@ export const addListFilt = async(data, html_element, page, url, btn_class_elemen
     btn.addEventListener("click", async(e) => {
 
         let input_box = e.target.previousSibling;
-        let verification = check_correct_input(input_box.value);
+        let verification = check_correct_input(filter_type, input_box.value);
         if (verification) {
             const btn_more = document.querySelector('.more');
             const div_parent  = btn_more.parentNode;
