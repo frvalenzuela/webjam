@@ -46,7 +46,32 @@ body {
   margin: 10px 0px;
   background-color: var(--main-red);
   border-radius: 5px;
-  height: 250px;
+  height: 280px;
+}
+
+.filters {
+  height: 240px;
+}
+
+.drag-and-drop {
+  color: transparent;
+  background: linear-gradient(
+    100deg,
+    var(--main-red) 30%,
+    #ffffff 50%,
+    var(--main-red) 70%
+  );
+  animation: loading 2s ease-in-out infinite;
+  background-size: 350%;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .data {
@@ -155,7 +180,7 @@ img {
   margin: auto;
   padding: 20px;
   border: 1px solid var(--main-white);
-  width: 80%;
+  width: 60%;
 }
 
 .stat-bar {
