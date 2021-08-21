@@ -36,5 +36,3 @@ export const add_button = (class_element) => {
   document.querySelector(class_element).appendChild(input_adding);
   document.querySelector(class_element).appendChild(button_adding);
 }
-
-// export { remove_pages, add_button, display_page };

@@ -1,8 +1,20 @@
 export async function getAllPokemonData(url) {
     const response = await fetch(url);
-    return response.json();
+    const data = await response.json();
+    const pokemonResults = await async function getMoreData(data) {
+        const pokemonDataResult = {};
+        for (let i = 0; i < data.results.length; i++) {
+            const element = data.results[i];
+            console.log(element)
+            const r = await fetch(element.url);
+            const rData = await r.json();
+            console.log(rData)
+            pokemonDataResult[element.name] = rData;
+        }
+        return pokemonDataResult
+    }(data)
+    return(pokemonResults)
 }
-
 
 const display_page = (array_pokemon, array_elemnt) => {
     array_pokemon.forEach(single_pokemon => {
@@ -63,28 +75,6 @@ const display_page = (array_pokemon, array_elemnt) => {
         let div1 = document.getElementById('data-grid').appendChild(h);
         array_elemnt.push(div1);
     })
-}
-
-const remove_pages = (array_elemnt) => {
-    array_elemnt.forEach(single_pokemon => {
-        single_pokemon.remove();
-    })
-}
-
-export const add_button = (class_element) => {
-    let text_adding = document.createElement('span');
-    let input_adding = document.createElement('input');
-    let button_adding = document.createElement('button');
-    text_adding.setAttribute('class', 'text-add');
-    input_adding.setAttribute('class', 'input-add');
-    button_adding.setAttribute('class', 'button-add');
-
-    text_adding.innerText = 'newValue';
-    button_adding.innerText = '+';
-
-    document.querySelector(class_element).appendChild(text_adding);
-    document.querySelector(class_element).appendChild(input_adding);
-    document.querySelector(class_element).appendChild(button_adding);
 }
 
 // Filtro por Tipo
