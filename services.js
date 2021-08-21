@@ -158,27 +158,18 @@ export const check_correct_input = (filter_type, user_input) => {
 }
 
 export const addListFilt = async(data, html_element, page, url, btn_class_element, filter_type) => {
-    const btn = document.querySelector(btn_class_element);
-    btn.addEventListener("click", async(e) => {
+    const btn = document.getElementById(btn_class_element);
+    btn.addEventListener("change", async(e) => {
 
-        let input_box = e.target.previousSibling;
-        let verification = check_correct_input(filter_type, input_box.value);
-        if (verification) {
-            const btn_more = document.querySelector('.more');
-            const div_parent  = btn_more.parentNode;
-            let h1 = document.createElement('H1');
-            h1.innerHTML = 'LOADING...';
-            div_parent.appendChild(h1);
-            btn_more.style.visibility='hidden';
-            await apply_filters(data, html_element, url, page, input_box.value, filter_type);
-            input_box.value = '';
-            h1.style.display='none';
-        } else{
-            input_box.value = '';
-            let h1 = document.createElement('span');
-            h1.innerHTML = 'BAD INPUT   ';
-            input_box.parentNode.appendChild(h1);
-        }
+        let input_box = btn.value;
+        const btn_more = document.querySelector('.more');
+        const div_parent  = btn_more.parentNode;
+        let h1 = document.createElement('H1');
+        h1.innerHTML = 'LOADING...';
+        div_parent.appendChild(h1);
+        btn_more.style.visibility='hidden';
+        await apply_filters(data, html_element, url, page, input_box, filter_type);
+        h1.style.display='none';
 
     });
 }
